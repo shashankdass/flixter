@@ -36,7 +36,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         int ratings = (int) (popularity/2);
         ratingBar.setRating(ratings);
         detailsTextView.setText(movie.getOverview());
-        Picasso.with(this).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(10, 10)).into(detailMovieImage);
+        Picasso.with(this).load(movie.getPosterPath()).placeholder(R.drawable.vid_placeholder)
+                .error(R.drawable.bomby).transform(new RoundedCornersTransformation(10, 10)).into(detailMovieImage);
     }
 
 }

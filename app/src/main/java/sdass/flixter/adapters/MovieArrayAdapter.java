@@ -2,14 +2,9 @@ package sdass.flixter.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -87,7 +82,9 @@ public class MovieArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             vh1.getTitle().setText( movie.getOriginalTitle());
             vh1.getOverview().setText(movie.getOverview());
             vh1.getImage().setImageResource(0);
-            Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(10, 10)).into(vh1.getImage());
+            Picasso.with(getContext()).load(movie.getPosterPath()).
+                    placeholder(R.drawable.vid_placeholder).error(R.drawable.bomby).
+                    transform(new RoundedCornersTransformation(10, 10)).into(vh1.getImage());
 
         }
     }
@@ -95,7 +92,10 @@ public class MovieArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private void configureViewHolder2(PopularMovieViewHolder vh2, int position) {
         Movie movie = (Movie) mMovies.get(position);
         vh2.getImage().setImageResource(0);
-        Picasso.with(getContext()).load(movie.getBackdropPath()).resize(2000,1000).transform(new RoundedCornersTransformation(10, 10)).into(vh2.getImage());
+        Picasso.with(getContext()).load(movie.getBackdropPath())
+                .placeholder(R.drawable.vid_placeholder)
+                .error(R.drawable.bomby).resize(2000,1000)
+                .transform(new RoundedCornersTransformation(10, 10)).into(vh2.getImage());
 
     }
 
