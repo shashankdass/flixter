@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@color/primary_black">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_movieImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="Star Trek Beyond"
+        android:id="@+id/tv_title"
+        android:textColor="@color/primary_blue"
+        android:textSize="40sp"
+        android:layout_toRightOf="@+id/iv_movieImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="The USS Enterprise crew explores the furthest reaches of uncharted space, where they encounter a mysterious new enemy who puts them and everything the Federation stands for to the test."
+        android:id="@+id/tv_overview"
+        android:layout_below="@+id/tv_title"
+        android:layout_toRightOf="@+id/iv_movieImage"
+        android:textSize="25sp"
+        android:textColor="@color/primary_white"/>
+</RelativeLayout>
